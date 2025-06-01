@@ -4,7 +4,7 @@ declare module 'react-qr-scanner' {
     export interface QrReaderProps {
         delay?: number;
         onError?: (error: any) => void;
-        onScan?: (data: string | null) => void;
+        onScan?: (data: { text: string } | null) => void;
         style?: React.CSSProperties;
         className?: string;
         facingMode?: 'user' | 'environment';

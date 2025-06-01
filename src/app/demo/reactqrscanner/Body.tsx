@@ -15,10 +15,11 @@ export default function Body() {
         setHasError(true);
     };
 
-    const handleScan = (data: string | null) => {
-        if (data) {
-            console.log('QR Code Data:', data);
-            setResult(data);
+    const handleScan = (data: { text: string } | null) => {
+        if (data && data.text) {
+            console.log('QR Code Data:', data.text);
+            setResult(data.text);
+            setDisplay(false); // スキャン成功後にモーダルを閉じる
         }
     }
 
